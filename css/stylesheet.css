@@ -306,6 +306,9 @@ footer {
   }
 }
 @media (min-width: 1000px) {
+  .game-image {
+    max-width: 250px;
+  }
   #game-section {
     min-width: 70vw;
   }
