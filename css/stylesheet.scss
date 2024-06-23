@@ -1,0 +1,370 @@
+@charset "UTF-8"; /* Charset */
+
+/* Normalize and font */
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-size:1.25em;
+    box-sizing: border-box;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    line-height: 1.4;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+// Colors
+$main-color: #16697A;
+$accent-color-1: #FFC0CB;
+$accent-color-2: #985F6F;
+$accent-color-3: #489FB5;
+$accent-color-4: #B5D8E1;
+$accent-color-5: #FFEEA3;
+$white: #FFFFFF;
+
+// Gaps
+$two-x-gap: 24px;
+$main-gap: 16px;
+$half-gap: 8px;
+
+//Mixins
+@mixin intro-style {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+
+@mixin p-styles {
+    padding: $half-gap;
+    color: $accent-color-2;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    font-size: 0.75rem;
+    strong {
+        color: $main-color;
+    }
+}
+
+@mixin button-styles {
+    border: 2px solid $accent-color-2;
+    background-color: $accent-color-1;
+    border-radius: $half-gap;
+    color: $accent-color-2;
+    font-weight: bold;
+    
+}
+
+@mixin button-hover-styles {
+    border: 2px solid $main-color;
+    background-color: $accent-color-4;
+    color: $main-color;
+}
+
+// Main Styles
+
+body {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    color: $white;
+    font-family: 'Gloria Hallelujah';
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header, footer {
+    background: $accent-color-2;
+    color: $white;
+}
+
+header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: $main-gap;
+}
+
+main {
+    display: grid;
+    background-image: url(../images/paw-background.png);
+    align-content: center;
+    justify-content: center;
+}
+
+footer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: $main-gap;
+}
+
+// Classes
+.game-image {
+    max-width: 175px;
+}
+
+.keyboard-button {
+    @include button-styles;
+    width: calc($two-x-gap * 1.5);
+    height: calc($two-x-gap * 1.5);
+    margin: calc($half-gap / 2);
+}
+
+.try-again, .change-difficulty {
+    @include button-styles;
+    margin: $half-gap;
+}
+
+.keyboard-button:hover, .try-again:hover, .change-difficulty:hover {
+    @include button-hover-styles;
+}
+
+.keyboard-button:active, .try-again:active, .change-difficulty:active {
+    background-color: $accent-color-5;
+}
+
+.story-container {
+    position: absolute;
+    background-color: $white;
+    border-radius: $half-gap;
+    border: $half-gap solid $accent-color-3;
+    padding: $main-gap;
+    margin: $main-gap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+
+    h3 {
+        color: $accent-color-3;
+        font-size: 1rem;
+    }
+
+    img {
+        max-width: 330px;
+    }
+
+    p {
+        color: $accent-color-3;
+        font-size: 0.8rem;
+        padding-top: $half-gap;
+    }
+}
+
+.intro-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+.outro-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.outro-container-displayed {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+// IDs
+#wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+#game-section {
+    z-index: 100;
+    display: none;
+    background-color: $white;
+    border-radius: $half-gap;
+    border: $half-gap solid $accent-color-2;
+    margin: $two-x-gap;
+    padding: 0 $main-gap $main-gap $main-gap;
+    min-height: 70vh;
+    min-width: 80vw;
+}
+
+#intro-pop {
+    @include intro-style;
+}
+
+#outro-pop {
+    @include intro-style;
+}
+
+
+#story-2 {
+    display: none;
+}
+
+#story-3  {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: $half-gap;
+
+    :first-child {
+        grid-area: 1 / 1 / 1 / span 2;
+    }
+
+    :nth-child(2) {
+        grid-area: 2 / 1 / 2 / span 2;
+    }
+
+    :nth-child(5) {
+        grid-area: 4 / 1 / 4 / span 2;
+    }
+
+    div {
+        border: 2px solid $main-color;
+        border-radius: $main-gap;
+        padding: $half-gap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div:hover {
+        border-color: $accent-color-2;
+
+        p, h3 {
+            color: $accent-color-2;
+        }
+    }
+}
+
+#pair-img-div img {
+    max-width: 200px;
+}
+
+#word-display-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#word-div {
+    background-color: $white;
+    border-radius: $half-gap;
+    border: $half-gap solid $main-color;
+    padding: $main-gap;
+    margin: $half-gap;
+    
+    p {
+        letter-spacing: 3px;
+        font-size: 1.25rem;
+        color: $accent-color-2;
+    }
+}
+
+#definition-div, #attempts-div {
+    @include p-styles;
+}
+
+#img-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#warning-div {
+    @include p-styles;
+}
+
+
+// Media Queries
+
+@media (min-width: 400px) {
+    #word-div {
+        p {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@media (min-width: 450px) {
+    #word-div {
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    #word-div {
+        p {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .keyboard-button {
+        margin: auto;
+    }
+
+    #button-div {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+        gap: $half-gap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #definition-div, #attempts-div {
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    #word-div {
+        p {
+            font-size: 3rem;
+        }
+    }
+} 
+
+@media (min-width: 1000px) {
+    #game-section {
+        min-width: 70vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    #game-section {
+        min-width: 60vw;
+    }
+}

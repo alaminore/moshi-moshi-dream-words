@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Moshi Moshi Cats - Dream Words</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../css/stylesheet.css" type="text/css">
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous" defer ></script>
+        <script src="../scripts/final-variables.js" defer></script>
+        <script src="../scripts/final-functions.js" defer></script>
+        <script src="../scripts/final-invocations.js" defer></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Moshi Moshi Cats</h1>
+                <h2>Dream Words</h2>
+            </header>
+            <main>
+                <section id="game-section">
+                    <div id="main-div">
+                        <div id="img-div">
+                            <img id="main-img" class="game-image">
+                            <div id="attempts-div"></div>
+                        </div>
+                        <div id="word-display-div">
+                            <div id="word-div"></div>
+                            <div id="definition-div"></div>
+                            <div id="warning-div"></div>
+                        </div>
+                        <div id="button-div">
+                            
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <p>&#169; 2024 Erica Dormuth</p>
+            </footer>
+            <div class="intro-container">
+                <section id="intro-pop">
+                    <div class="story-container" id="story-1">
+                        <img src="../images/study-01.gif" alt="Moshi moshi cats studying">
+                        <h3>The Moshi Moshi cats studied for their English exam all week...</h3>
+                    </div>
+                    <div class="story-container" id="story-2">
+                        <img src="../images/mochi-01.gif" alt="Moshi moshi cats sleeping">
+                        <h3>The night before the exam, they dreamed about English...</h3>
+                    </div>  
+                    <div class="story-container" id="story-3">
+                        <h3>Help the sleeping Moshi Moshi Cats remember their English!</h3>
+                        <p>Start by choosing your difficulty:</p>
+                        <div id="peach-img-div">
+                            <img src="../images/start-01-static.gif" alt="Peach">
+                            <h3>Easy</h3>
+                            <p><em>Five letters or less</em></p>
+                            <p><em>Six attempts</em></p>
+                        </div>
+                        <div id="goma-img-div">
+                            <img src="../images/start-02-static.gif" alt="Goma">
+                            <h3>Normal</h3>
+                            <p><em>Five - seven letters</em></p>
+                            <p><em>Six attempts</em></p>
+                        </div>
+                        <div id="pair-img-div">
+                            <img src="../images/mochi-05-static.gif" alt="Moshi Moshi Cats">
+                            <h3>Hard</h3>
+                            <p><em>Any word length</em></p>
+                            <p><em>Five attempts</em></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="outro-container" id="out-con">
+                <section id="outro-pop">
+                    <div class="story-container" id="end">
+                        <img>
+                        <h3></h3>
+                        <p></p>
+                        <button class="try-again">Try Again?</button>
+                        <button class="change-difficulty">Change Difficulty</button>
+                    </div> 
+                </section>
+            </div>
+        </div>
+    </body>
