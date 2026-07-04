@@ -46,7 +46,7 @@ let lose = false;
 
 
 // Fetching the JSON data and creating an array of word objects
-fetch( "../scripts/dictionary.json" )
+fetch( "/moshi-moshi-dream-words/scripts/dictionary.json" )
     .then(function( response ){
         if( response.ok ){
             const jsonData = response.json()
